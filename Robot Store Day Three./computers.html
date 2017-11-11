@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Our Computer Store!</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a class="headerlogo" href="index.html">
+                <img class="img-fluid" src="images/logo.jpg" />
+            </a>
+            <span id="headername">Mr. Robot</span>
+      
+        </div>
+        <nav class="navbar navbar-default"><!--Start of Navigation-->
+            <div class="container-fluid">
+              <!--Logo and  toggle bar -->
+              
+              <div class="navbar-header">
+                 <a href="index.html" class="navbar-brand"><span id="headernameb">Mr. Robot</span></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                
+              </div>
+              <!--Menu Items-->
+              <div class="collapse navbar-collapse" id="mainNavbar">
+                  <ul class="nav navbar-nav">
+                          <li><a href="index.html">Home</a></li>
+                          <li><a class="" href="robots.html">Robots</a></li>
+                          <li class="active"><a class="" href="computers.html">Hardware</a></li>
+                          <li><a class="" href="contact.html">Contact</a></li>
+                          <li><a class="" href="about.html">About</a></li>
+                    
+                  </ul>
+                  <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search our store">
+                    </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+              </div>
+              
+            </div>
+      
+        </nav><!--End of Navigation>-->
+    </header><!--End of Header-->
+
+    <main role="main">
+       <div class="container"><!--Start of Container-->
+        <div class="row">
+         <form>
+          <div class="col-md-4 col-sm-4 mb-4">
+            <fieldset class="computers">
+              <legend>Select a CPU</legend>
+              <div col-md-4 col-sm-4 col-xs-12><p><label for="i3"><input type="radio" name="CPU" id="i3">Intel i3</label></p></div>
+              <div col-md-4 col-sm-4 col-xs-12><p><label for="i4"><input type="radio" name="CPU" id="i4"></label>Intel i4</p></div>
+              <div col-md-4 col-sm-4 col-xs-12> <p><label for="i7"><input type="radio" name="CPU" id="i7"></label>Intel i7</p></div>
+              
+            </fieldset>
+          </div>
+
+           <div class="col-md-4 col-sm-4 mb-4">
+             <fieldset class="computers">
+              <legend>Select Ram</legend>
+              <div col-md-4 col-sm-4 col-xs-12><p><label for="8"><input type="radio" name="ram" id="8">8gig</label></p></div>
+              <div col-md-4 col-sm-4 col-xs-12><p><label for="16"><input type="radio" name="ram" id="16">16gig</label></p></div>
+              <!--<div col-md-4 col-sm-4 col-xs-12> <p><label for="i7"><input type="radio" name="CPU" id="i7"></label>Intel i7</p></div>-->
+              
+            </fieldset>
+          </div>
+
+
+           <div class="col-md-4 col-sm-4 mb-4">
+            <fieldset class="computers">
+              <legend></legend>
+              <div col-md-4 col-sm-12 col-xs-12><p><label for="vrh"><input type="checkbox" name="" id="vrh">Virtual Reality Helmet</label></p></div>
+              <div col-md-4 col-sm-12 col-xs-12><p><label for="3ds"><input type="checkbox" name="" id="3ds">3D Screen</label></p></div>
+              <div col-md-4 col-sm-12 col-xs-12><p><label for="ss"><input type="checkbox" name="" id="ss">Stereo Speakers</label></p></div>
+              
+            </fieldset>
+          </div>
+         </form>
+          
+       </div>
+      </div> 
+
+    </main>
+
+    <form>
+
+      <p>
+          <button class="submitbutton">Submit</button>
+      </p>
+
+    <footer class="footer">
+      <div class="container">
+           <div class="col-md-4 col-sm-4 mb-4"><p class="text-muted">Our address is <br/>1011 Crater Ave, <br/>Moon City: THE MOON</p></div>
+           <div class="col-md-4 col-sm-4 mb-4"><p class="text-muted"> &copy; 2017 - Mr Robot, Inc.<br/> All Rights Reserved. <a class="mainlink" href="http://www.mrrobot.com">Mr Robot!</a></p></div>
+           <div class="col-md-4 col-sm-4 mb-4"><p class="text-muted">This page was generated on<br/> <time>09:25:04.123</time>.</p></div>
+      </div>
+    </footer>
+
+
+    <script>
+      /* TODO: Move To js file */
+      /*********************************************************
+       *
+       *   Test Checkboxes/Radio Buttons Script
+       *
+       *********************************************************/
+       // loop through each form and handle submit event
+       for (var i=0;i<document.forms.length;i++) {
+         var form = document.forms[i];
+         form.addEventListener('submit', function(e){
+           e.preventDefault();
+           var results = '';
+          // loop through all checkboxes to see if checked
+          var checkboxes = form.querySelectorAll("input[type='checkbox']");
+          for(var k = 0; k < checkboxes.length; k++) {
+            results += checkboxes[k].id + '=' + checkboxes[k].checked + '\n';
+          }
+          // loop through all radio butotns to display value
+          var radiobuttons = form.querySelectorAll("input[type='radio']:checked");
+          for(var m = 0; m < radiobuttons.length; m++) {
+            results += radiobuttons[m].name + '=' + radiobuttons[m].value + '\n';
+          }
+          // alert results
+          alert(results);
+        });
+      }
+    </script>
+  </body>
+</html>
